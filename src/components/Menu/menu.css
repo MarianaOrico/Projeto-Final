@@ -1,0 +1,32 @@
+.menu {
+    list-style-type: none;  
+    padding: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    text-align: right;
+    align-items: flex-end;
+    background-color: #DFCC91;
+    margin: auto 0;
+}
+
+.item {
+    float: right;
+}
+
+.item {
+    font-size: 1.3em;
+    font-weight: 600;
+    display: block;
+    padding: 14px;
+    text-decoration: none;
+    color: rgb(8, 15, 10);
+}
+
+body,
+input,
+button,
+textarea {
+    font: 600 18px Nunito, sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}
