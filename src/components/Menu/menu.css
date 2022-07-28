@@ -1,5 +1,5 @@
 .menu {
-    list-style-type: none;  
+    text-decoration: none;  
     padding: 20px;
     display: flex;
     flex-direction: row-reverse;
@@ -11,6 +11,7 @@
 
 .item {
     float: right;
+    text-decoration: none; 
 }
 
 .item {

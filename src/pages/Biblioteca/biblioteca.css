@@ -1,0 +1,42 @@
+.lib-container {
+    padding:40px;
+}
+
+.livro-card {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.livro-card h3 {
+    font-size: 1.2rem;
+    color: rgb(0, 0, 0); 
+}
+
+.livro-card img {
+    max-width: 90%;
+    min-height: 75%;
+    max-height: 76%;
+    box-shadow: 2px 1px 5px 1px black;
+}
+
+.procurar-container{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+}
+
+.input-procurar {
+    width: 25%;
+}
+
+.btn-procurar {
+    margin: 5px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+

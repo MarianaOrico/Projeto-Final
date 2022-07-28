@@ -1,10 +1,12 @@
 import './cards.css'
 
 function Cards(props) {
-    return(
-        <div className="card-vertente">
-        <h1>{props.title}</h1>
-        <p>{props.description}</p>
+    return (
+        <div className='container-cards'>
+            <div className="card-vertente">
+                <h3>{props.title}</h3>
+                <p>{props.description}</p>
+            </div>
         </div>
     )
 }
