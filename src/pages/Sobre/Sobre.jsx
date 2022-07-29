@@ -4,18 +4,18 @@ import './sobre.css'
 function Sobre() {
     return (
         <>
-        <div className='present'>
-            <img className="imgPerfil" src="../../../Imagem.jpeg" />
-            <h2>Mariana Orico</h2>
-            <h3>Graduanda em Psicologia pela Universidade Federal de Sergipe</h3>
-            <h3>Desenvolvedora Front-End Júnior | HTML | CSS | JavaScript | React.JS</h3>
-            <h3>Gestora de Condomínios na empresa Torre Administração de Condomínios</h3>
-            <h3>Estagiária em Psicologia Institucional no Centro de Atenção Psicossocial III Liberdade</h3>
-            <h3>Estagiária em Psicologia Clinica da EMAESM do Centro de Reabilitação Dr. Raimundo Aragão</h3>
-            <h3></h3>
-    
-        </div>
-        <Footer />
+            <div className='present'>
+                <img id="imgPerfil" className="scale-up-center" src="../../../Imagem.jpeg" />
+                <div className='p-present'>
+                    <h1>Mariana Orico</h1>
+                    <p className='slide-right'>Graduanda em Psicologia pela Universidade Federal de Sergipe</p>
+                    <p className='slide-left'>Desenvolvedora Front-End Júnior | HTML | CSS | JavaScript | React.JS</p>
+                    <p className='slide-right'>Gestora de Condomínios na empresa Torre Administração de Condomínios</p>
+                    <p className='slide-left'>Estagiária em Psicologia Institucional no Centro de Atenção Psicossocial III Liberdade</p>
+                    <p className='slide-right'>Estagiária em Psicologia Clinica da EMAESM do Centro de Reabilitação Dr. Raimundo Aragão</p>
+                </div>
+            </div>
+            <Footer />
         </>
     )
 }

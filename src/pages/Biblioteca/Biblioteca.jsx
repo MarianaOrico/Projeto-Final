@@ -26,14 +26,16 @@ function Biblioteca() {
     }
 
     useEffect(() => {
-        setFilteredLivros(livros.livros.filter(livro => livro.title.includes(search)))
+        setFilteredLivros(livros?.livros?.filter((livro) => livro.title.includes(search) || livro.autor.includes(search))
+        );
     }, [livros, search])
 
 
     return (
         <>
             <div className='procurar-container'>
-                <input className='input-procurar'
+                <input
+                    className='input-procurar'
                     placeholder='Digite um livro ou autor'
                     onChange={handleSearch}
                 />
@@ -41,16 +43,14 @@ function Biblioteca() {
                 <button className='btn-procurar'>🔍</button>
             </div>
 
-            {
-                filteredLivros.map(livros => {
                     <div className="lib-container">
                         <ul>
                             <FlatList
-                                list={filteredLivros ? filteredLivros.livros : livros.livros}
+                                list={filteredLivros ? filteredLivros : livros.livros}
                                 renderItem={(livro) =>
                                     <div className="livro-card" key={livro.id}>
-                                        <img src={livro.image} />
-                                        <h3>{livro.title}</h3>
+                                        <img className='image-card' src={livro.image} />
+                                        <p>{livro.title}</p>
                                     </div>
                                 }
                                 displayGrid
@@ -58,7 +58,6 @@ function Biblioteca() {
                         </ul>
 
                     </div>
-                })}
 
             <Footer />
         </>

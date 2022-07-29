@@ -1,0 +1,10 @@
+.textinhos {
+    margin: 30px;
+    text-align: justify;
+}
+
+.cards-container{
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+}
