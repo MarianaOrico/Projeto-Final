@@ -13,8 +13,8 @@
 }
 
 .shadow-pop-bl {
-	-webkit-animation: shadow-pop-bl 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-	        animation: shadow-pop-bl 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+	-webkit-animation: shadow-pop-bl 1.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+	        animation: shadow-pop-bl 1.5s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
 }
 
 @-webkit-keyframes shadow-pop-bl {
