@@ -1,5 +1,5 @@
 #imgPerfil {
-    margin-top: 60px;
+    margin-top: 50px;
     border-radius: 200px;
     width: 20%;
     box-shadow: 1px 5px 10px rgb(122, 122, 122);
@@ -96,3 +96,19 @@
     }
   }
   
+   .icons-skills i {
+    font-size: 1.9rem;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .icons-skills {
+    width: 33%;
+    background-color: rgb(214, 214, 214);
+    padding: 8px;
+    border: 1px solid rgb(182, 182, 182);;
+    border-radius: 8px;
+    text-align: center;
+    margin-left: 200px;
+    margin-bottom: 25px;
+  }

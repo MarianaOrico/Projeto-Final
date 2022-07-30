@@ -1,12 +1,13 @@
 import Footer from '../../components/Footer/Footer'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import FlatList from 'flatlist-react'
 import axios from 'axios'
 import { Buffer } from 'buffer';
 import './biblioteca.css'
 
 function Biblioteca() {
-    const [livros, setLivros] = useState([])
+    const [livros, setLivros] = useState([]);
+    const [show, setShow] = useState(false)
     const baseURL = 'https://api.github.com/repos/MarianaOrico/API-fake-projeto-final/contents/db.json?ref=main';
     const [filteredLivros, setFilteredLivros] = useState([]);
     const [search, setSearch] = useState('')
@@ -26,10 +27,26 @@ function Biblioteca() {
     }
 
     useEffect(() => {
-        setFilteredLivros(livros?.livros?.filter((livro) => livro.title.includes(search) || livro.autor.includes(search))
+        setFilteredLivros(
+            livros?.livros?.filter((livro) => {
+                const itemMinusculo = search.toLowerCase();
+                if (
+                    livro.title.toLowerCase().includes(itemMinusculo) ||
+                    livro.autor.toLowerCase().includes(itemMinusculo)
+                ) {
+                    return livro.title || livro.autor;
+                }
+            })
         );
     }, [livros, search])
 
+    const handleShowHideSinopse = () => {
+        if (!show) {
+            setShow(true);
+        } else {
+            setShow(false);
+        }
+    };
 
     return (
         <>
@@ -43,22 +60,24 @@ function Biblioteca() {
                 <button className='btn-procurar'>🔍</button>
             </div>
 
-                    <div className="lib-container">
-                        <ul>
-                            <FlatList
-                                list={filteredLivros ? filteredLivros : livros.livros}
-                                renderItem={(livro) =>
-                                    <div className="livro-card" key={livro.id}>
-                                        <img className='image-card' src={livro.image} />
-                                        <p>{livro.title}</p>
-                                    </div>
-                                }
-                                displayGrid
-                            />
-                        </ul>
-
-                    </div>
-
+            <div className="lib-container">
+                <ul>
+                    <FlatList
+                        list={filteredLivros ? filteredLivros : livros.livros}
+                        renderItem={(livro, index) => (
+                            <div className='livro-livro'>
+                                <div className="livro-card"
+                                    key={livro.id} onClick={handleShowHideSinopse}>
+                                    <img className='image-card' src={livro.image} />
+                                    <p>{livro.title}</p>
+                                </div>
+                                {show ? <text>{livro.sinopse}</text> : <></>}
+                            </div>
+                        )}
+                        displayGrid
+                    />
+                </ul>
+            </div>
             <Footer />
         </>
     )
